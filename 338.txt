@@ -1,0 +1,42 @@
+#include <iostream>
+
+int main()
+{
+  
+    long long r1 =0;
+    long long r2 =0;
+    std::string b;
+    std::cin >>b;
+    if(b.size() % 2 != 0)
+    {
+        if(b[0] - '0' == 0)
+        {
+            b.erase(0,1);
+        }
+        else
+        {
+            std::cout << "unlucky";
+            return 0;
+        }
+    }
+
+
+    for (int i = 0; i < b.size() / 2; ++i) 
+    {
+        r1 += b[i] - '0';
+        r2 += b[b.size() - 1 - i] - '0';
+    }
+    if(b[0] - '0' == 0)
+    {
+        std::cout << "unlucky";
+        return 0;
+    }
+    if(r1 == r2)
+    {
+        std::cout << "lucky";
+    }
+    else
+    {
+        std::cout << "unlucky";
+    }
+}
